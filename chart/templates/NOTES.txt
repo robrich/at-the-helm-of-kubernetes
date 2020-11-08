@@ -1,0 +1,16 @@
+Thanks for installing {{ .Chart.Name }} v.{{ .Chart.Version }}.
+
+You chose to name this instance {{ .Release.Name }}.
+
+To see your resources run:
+helm status {{ .Release.Name }}
+helm get all {{ .Release.Name }}
+kubectl get all
+
+{{ if .Values.ingressEnabled -}}
+Start your app by browsing to
+http://{{ .Values.ingressHost | default "localhost" }}:{{ .Values.port }}/
+{{- end }}
+
+Get the {{ .Values.serviceType }} port for the service by running:
+kubectl get svc {{ .Chart.Name }}

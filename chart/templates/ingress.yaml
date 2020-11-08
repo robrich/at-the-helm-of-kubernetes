@@ -1,0 +1,21 @@
+{{- if .Values.ingressEnabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ .Chart.Name }}-{{ .Release.Name }}
+  annotations:
+    {{- toYaml .Values.ingressAnnotations | nindent 4 }}
+spec:
+  rules:
+  # https://docs.microsoft.com/en-us/azure/aks/http-application-routing
+  - host: {{ .Values.ingressHost }}
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: {{ .Chart.Name }}-{{ .Release.Name }}
+            port:
+              number: {{ .Values.port }}
+{{- end -}}

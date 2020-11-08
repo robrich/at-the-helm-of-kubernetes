@@ -1,0 +1,14 @@
+apiVersion: v2
+name: atthehelm
+description: At The Helm of Kubernetes Sample App
+
+# 'application': deployed chart
+# or
+# 'library': dependency for other charts
+type: application
+
+# Chart version, must be semver.
+version: 0.1.0
+
+# App version, not semver.
+appVersion: 0.1.0
