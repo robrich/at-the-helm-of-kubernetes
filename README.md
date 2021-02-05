@@ -3,7 +3,7 @@ At The Helm of Kubernetes: Repeatable Infrastructure Creation for Mere Mortals
 
 A live demo talk about Helm by [Rob Richardson](https://robrich.org/about).
 
-See the slides at https://robrich.org/slies/at-the-helm-of-kubernetes/#/
+See the slides at https://robrich.org/slides/at-the-helm-of-kubernetes/#/
 
 ## Run it
 
