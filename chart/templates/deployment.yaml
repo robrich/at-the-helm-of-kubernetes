@@ -12,12 +12,12 @@ spec:
     metadata:
       labels:
         app: {{ .Chart.Name }}
-        release: {{ .Release.Name }}
         version: {{ .Values.imageLabel }}
+        release: {{ .Release.Name }}
     spec:
       containers:
-      - name: {{ .Chart.Name }}
-        image: '{{ if .Values.registry -}}{{ .Values.registry }}/{{- end -}}{{ .Chart.Name }}:{{ .Values.imageLabel }}'
+      - name: {{ .Chart.Name }}-{{ .Release.Name }}
+        image: '{{- if .Values.registry -}}{{ .Values.registry }}/{{- end -}}{{ .Chart.Name }}:{{ .Values.imageLabel }}'
         ports:
         - containerPort: {{ .Values.port }}
         resources:

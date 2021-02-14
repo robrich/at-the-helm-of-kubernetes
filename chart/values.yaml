@@ -1,5 +1,5 @@
-port: 80
 serviceType: NodePort
+port: 80
 replicas: 1
 imageLabel: IMAGE_LABEL
 registry: ACR_URL
@@ -7,7 +7,7 @@ resources:
   limits:
     cpu: 500m
     memory: 128Mi
+ingressEnabled: true
 ingressAnnotations:
   kubernetes.io/ingress.class: addon-http-application-routing
 ingressHost: atthehelm.AKS_URL
-ingressEnabled: true
