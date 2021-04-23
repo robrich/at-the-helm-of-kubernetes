@@ -8,7 +8,7 @@ RUN dotnet restore
 
 COPY . .
 RUN dotnet build -c Release
-RUN dotnet test
+RUN dotnet test -c Release
 RUN dotnet publish -c Release -o /dist
 
 
